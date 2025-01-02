@@ -1,11 +1,12 @@
-import ApplicationLogo from '@/Components/ApplicationLogo';
+import ApplicationLogo from '@/Components/App/ApplicationLogo';
+import Navebare from '@/Components/App/Navebare';
 import Dropdown from '@/Components/Core/Dropdown';
 import NavLink from '@/Components/Core/NavLink';
 import ResponsiveNavLink from '@/Components/Core/ResponsiveNavLink';
 import { Link, usePage } from '@inertiajs/react';
 import { PropsWithChildren, ReactNode, useState } from 'react';
 
-export default function Authenticated({
+export default function AuthenticatedLayout({
     header,
     children,
 }: PropsWithChildren<{ header?: ReactNode }>) {
@@ -15,8 +16,10 @@ export default function Authenticated({
         useState(false);
 
     return (
+       
         <div className="min-h-screen bg-gray-100">
-            <nav className="border-b border-gray-100 bg-white">
+            <Navebare/>
+            {/* <nav className="border-b border-gray-100 bg-white">
                 <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
                     <div className="flex h-16 justify-between">
                         <div className="flex">
@@ -26,14 +29,14 @@ export default function Authenticated({
                                 </Link>
                             </div>
 
-                            <div className="hidden space-x-8 sm:-my-px sm:ms-10 sm:flex">
+                           <div className="hidden space-x-8 sm:-my-px sm:ms-10 sm:flex">
                                 <NavLink
                                     href={route('dashboard')}
                                     active={route().current('dashboard')}
                                 >
                                     Dashboard
                                 </NavLink>
-                            </div>
+                            </div> 
                         </div>
 
                         <div className="hidden sm:ms-6 sm:flex sm:items-center">
@@ -163,17 +166,17 @@ export default function Authenticated({
                         </div>
                     </div>
                 </div>
-            </nav>
+            </nav> */}
 
-            {header && (
+            {/* {header && (
                 <header className="bg-white shadow">
                     <div className="mx-auto max-w-7xl px-4 py-6 sm:px-6 lg:px-8">
                         {header}
                     </div>
                 </header>
-            )}
+            )} */}
 
-            <main>{children}</main>
+            <main>{children}</main> 
         </div>
     );
 }
